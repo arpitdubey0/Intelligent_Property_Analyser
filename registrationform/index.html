@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>House price prediction</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- MATERIAL DESIGN ICONIC FONT -->
+	<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+	<!-- STYLE CSS -->
+	<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<div class="inner">
+			<form action="{{url_for('predict')}}" method="post">
+				<h3>House Price Prediction</h3>
+				<div class="form-group">
+					<input type="number" placeholder="Enter Area" name="area" class="form-control">
+					<input type="number" placeholder="Bedrooms" name="bedrooms" class="form-control">
+				</div>
+				<div class="form-group">
+					<input type="number" placeholder="Bathrooms" name="bathrooms" class="form-control">
+					<input type="number" placeholder="stories" name="stories" class="form-control">
+				</div>
+				<div class="form-group">
+					<input type="number" placeholder="Parking" name="parking" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="exampleSelect"  class="form-label"></label>
+					<select name="mainroad" class="form-control" id="exampleSelect">
+						<option>mainroads availability </option>
+						<option value="1">1</option>
+						<option value="0">0 </option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label for="exampleSelect"  class="form-label"></label>
+					<select name="guestroom" class="form-control" id="exampleSelect">
+						<option>guestrooms availability </option>
+						<option value="1">1</option>
+						<option value="0">0 </option>
+					</select>
+				</div>
+
+
+				<div class="form-group">
+
+					<label for="exampleSelect" class="form-label"></label>
+					<select name="basement" class="form-control" id="exampleSelect">
+						<option>basement availability </option>
+						<option value="1">1</option>
+						<option value="0">0 </option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="exampleSelect" class="form-label"></label>
+					<select name="hotwaterheating" class="form-control" id="exampleSelect">
+						<option>hotwaterheating facility </option>
+						<option value="1">1</option>
+						<option value="0">0 </option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="exampleSelect" class="form-label"></label>
+					<select name="airconditioning" class="form-control" id="exampleSelect">
+						<option>airconditioning facility </option>
+						<option value="1">1</option>
+						<option value="0">0 </option>
+					</select>
+				</div>
+				
+				<div class="form-group">
+					<label for="exampleSelect"  class="form-label"></label>
+					<select name="prefarea"class="form-control" id="exampleSelect">
+						<option>prefarea facility </option>
+						<option value="1">1</option>
+						<option value="0">0 </option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="exampleSelect"  class="form-label"></label>
+					<select name="furnished" class="form-control" id="exampleSelect">
+						<option>furnished facility </option>
+						<option value="1">1</option>
+						<option value="0">0 </option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="exampleSelect" class="form-label"></label>
+					<select name="semi-furnished" class="form-control" id="exampleSelect">
+						<option>semi-furnished facility </option>
+						<option value="1">1</option>
+						<option value="0">0 </option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="exampleSelect"  class="form-label"></label>
+					<select name="unfurnished" class="form-control" id="exampleSelect">
+						<option>unfurnished facility </option>
+						<option value="1">1</option>
+						<option value="0">0 </option>
+					</select>
+				</div>
+				<button type="submit">Predict
+					<i class="zmdi zmdi-arrow-right"></i>
+				</button>
+			</form>
+			<h3><br>{{prediction_text}}</h3>
+		</div>
+	</div>
+</body>
+
+</html>
